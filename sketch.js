@@ -247,6 +247,7 @@ var sketch = function(p){
   p.handleFile = function(file){
     if (file.type === 'image') {
     img = p.createImg(file.data, '');
+    img.style("display:none");
     showImage = true;
   } else {
     img = null;
