@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- P5 sketch fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond&family=IBM+Plex+Mono:wght@500&family=Limelight&family=Open+Sans&family=Oswald:wght@500&family=Playfair+Display:wght@500&family=Roboto&family=Volkhov&display=swap" rel="stylesheet">
+
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+
+    <script src="CCapture.all.min.js"></script>
+
+    <script src="sketch.js"></script>
+  </head>
+
+  <body>
+
+    <header id="PosterGenerator">
+      <p id="PosterGeneratorLogo">POSTER GENERATOR</p>
+      <a href="#" id="infoLink">INFO DEL PROYECTO</a>
+    </header>
+
+    <section id="navbar">
+      <div class="navbarItem"><a href="#" class="menuList" id="titularLink">Texto1</a></div>
+      <div class="navbarItem"><a href="#" class="menuList" id="subtitularLink">Texto2</a></div>
+      <div class="navbarItem"><a href="#" class="menuList" id="fondoLink">Fondo</a></div>
+      <div class="navbarItem"><a href="#" class="menuList" id="rotacionLink">Movimiento</a></div>
+      
+    </section>
+
+    <section id="toolBox">
+
+      <!-- TITULAR -->
+      <section class="tool" id="titular">
+
+        <p class="toolTitle">Escribe tu texto</p>
+        <p class="selectFontBtn"><a href="#" id="titleTypeOpen">Selecctionar Tipografía</a></p>
+
+        <div class="typeSelector" id="titleTypeSelector">
+          <ul>
+            <li class="typeSelectorBtn"><a href="#" id="closeTitle">X</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tRoboto">Roboto</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tOswald">Oswald</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tPlayfair">Playfair Display</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tIBM">IBM Plex Mono</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tAnton">Anton</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tOpen">Open Sans</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tCormorant">Cormorant Garamond</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tVolkhov">Volkhov</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="tLimilight">Limelight</a></li>
+          </ul>
+        </div>
+        
+        <textarea id="titularTextarea" cols="30" rows="3"></textarea>
+
+        <!-- Alignments -->
+        <p>
+        <a href="#" id="titleIzq">Izq</a> |
+        <a href="#" id="titleCen">Cen</a> |
+        <a href="#" id="titleDer">Der</a>
+        </p>
+
+        <!-- Selectors -->
+        <br>
+        <br>
+        <p>Tamaño de texto</p>
+        <input type="range" min="1" max="1000" value="150" class="slider" id="titleSizeSlider">
+        <p>Interlínea</p>
+        <input type="range" min="-200" max="500" value="0" class="slider" id="titleLeadingSlider">
+        <p>Posición X</p>
+        <input type="range" min="0" max="100" value="50" class="slider" id="titlePosXSlider">
+        <p>Posición Y</p>
+        <input type="range" min="0" max="100" value="50" class="slider" id="titlePosYSlider">
+        <p>Color</p>
+        <input class="coloree" type="color" id="titleColorPicker" value="#414141">
+        <br><br><br><br>
+        
+        <p class="subtitulo">Ajustes 3D</p>
+        <p>Cantidad de planos delante</p>
+        <input type="range" min="0" max="100" value="1" class="slider" id="titlePlanesZPlusSlider">
+        <p>Cantidad de planos atras</p>
+        <input type="range" min="0" max="100" value="0" class="slider" id="titlePlanesZMinusSlider">
+        <p>Distancia entre planos</p>
+        <input type="range" min="1" max="1000" value="300" class="slider" id="titlePlanesDistanceSlider">
+      </section>
+
+      <!-- SUBTITULAR -->
+      <section class="tool" id="subtitular">
+
+        <p class="toolTitle">Escribe tu texto</p>
+        <p class="selectFontBtn"><a href="#" id="subtitleTypeOpen">Seleccionar tipografía</a></p>
+
+        <div class="typeSelector" id="subtitleTypeSelector">
+          <ul>
+            <li class="typeSelectorBtn"><a href="#" id="closeSubtitle">X</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sRoboto">Roboto</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sOswald">Oswald</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sPlayfair">Playfair Display</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sIBM">IBM Plex Mono</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sAnton">Anton</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sOpen">Open Sans</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sCormorant">Cormorant Garamond</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sVolkhov">Volkhov</a></li>
+            <li class="typeSelectorBtn"><a href="#" id="sLimilight">Limelight</a></li>
+          </ul>
+        </div>
+
+        <textarea id="subtitularTextarea" cols="30" rows="3"></textarea>
+
+        <!-- Alignments -->
+        <p>
+        <a href="#" id="subtitleIzq">Izq</a> |
+        <a href="#" id="subtitleCen">Cen</a> |
+        <a href="#" id="subtitleDer">Der</a>
+        </p>
+        
+        <!-- Selectors -->
+        <br><br>
+        <p>Tamaño de texto</p>
+        <input type="range" min="1" max="200" value="100" class="slider" id="subtSizeSlider">
+        <p>Interlínea</p>
+        <input type="range" min="-200" max="200" value="0" class="slider" id="subtLeadingSlider">
+        <p>Posición X</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="subtPosXSlider">
+        <p>Posición Y</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="subtPosYSlider">
+        <p>Color</p>
+        <input class="coloree" type="color" id="subtitleColorPicker" value="#000000">
+        
+      </section>
+
+      <!-- FONDO -->
+      <section class="tool" id="fondo">
+        <p class="subtitulo">Fondo con imagen</p>
+        <p class="toolTitle">Imagen de fondo</p>
+        <a href="#" id="deleteImage">Borrar Imagen</a>
+        <label for="uploadBtnId"><div id="uploadBtn">Buscar en tu dispositivo...</div></label>
+        <br>
+        <p>Escala de imagen</p>
+        <input type="range" min="0,05" max="5" value="1" class="slider" step="0.05" id="SuperScaleSlider">
+        <br><br><br>
+        <p class="subtitulo">Fondo con color</p>
+        <p>Color de fondo</p>
+        <input class="coloree" type="color" id="bkColorPicker" value="#FFFFFF">
+        <br><br>
+        
+        <br><br><br>
+        <p class="subtitulo">Borde de imagen</p>
+        <p>Tamaño de borde</p>
+        <input type="range" min="0" max="800" value="0" class="slider" id="borderSize">
+        <p>Color de borde</p>
+        <input class="coloree" type="color" id="borderColorPicker" value="#000000">
+      </section>
+
+      <section class="tool" id="rotacion">
+        <p>Rotar eje X</p>
+        <input type="range" min="0" max="360" value="0" class="slider" id="rotateX">
+        <p>Rotar eje Y</p>
+        <input type="range" min="0" max="360" value="0" class="slider" id="rotateY">
+        <p>Rotar eje Z</p>
+        <input type="range" min="0" max="360" value="0" class="slider" id="rotateZ">
+      
+
+        <br><br><br><br>
+        <p class="subtitulo">Animación automática</p>
+        <p>Girar eje X:
+          <a href="#" class="toolTitle" id="onX">ON</a> | <a href="#" id="offX">OFF</a>
+        </p>
+        <p>Girar eje Y:
+          <a href="#" class="toolTitle" id="onY">ON</a> | <a href="#" id="offY">OFF</a>
+        </p>
+        <p>Girar eje Z:
+          <a href="#" class="toolTitle" id="onZ">ON</a> | <a href="#" id="offZ">OFF</a>
+        </p>
+        <br>
+        <p>Controlador de animación</p>
+        <div id="timeBox">
+          <div class="quarter"><small>3s</small></div>
+          <div class="quarter"><small>6s</small></div>
+          <div class="quarter"><small>9s</small></div>
+          <div id="timeBar"></div>
+        </div>
+        <a href="#" class="timeBtn" id="playBtn">Play</a><a href="#"class="timeBtn" id="stopBtn">Stop</a>
+      </section>
+
+    </section>
+
+    <section id="viewRender">
+      <a href="#" id="rotateBtn">Rotar canvas</a>
+      <div id="canvasContainer"></div>
+      <div id="renderScale">
+        <input type="range" orient="vertical"min="0" max="1080" value="400" class="slider" id="canvasScale">
+      </div>
+    </section>
+
+    <section id="downloadSection">
+      <div class="downloadSection" id="AddName"><textarea id="documentNameTextarea" cols="30" rows="1" placeholder="Titulo de poster"></textarea></div>
+      <div class="downloadSection" id="downloadImage"><a href="#">Descargar IMG</a></div>
+      <div class="downloadSection" id="downloadVideo"><a href="#">Descargar Video </a></div>
+    </section>
+
+    <div id="noCanvas"></div>
+
+
+    <section id="info">
+      <div id="infoBar">
+        <a href="#" id="closeInfo">Cerrar página</a>
+      </div>
+      <div id="about">
+        <h3>Información del proyecto:</h1>
+        <br>
+        <p>Hola! Este es un proyecto realizado en un proceso personal de aprendizaje de herramientas de programación creativa en combinación con otras de diseño web. En este caso el objetivo es crear una herramienta con la cual sea posible crear contenido 2D y 3D de forma simple y dentro de un marco de posibilidades otorgado desde el programa.
+        <br><br>
+        Invito a que exploren, prueben, generen contenido copado, y lo compartan para que pueda verlo :)
+        </p>
+      </div>
+      <div id="avisos">
+        <h3>Algunos avisos</h3>
+        <br>
+        <p>¡Si se encuentran con algún error o problema pónganse en contacto! Así puedo tratar de solucionarlo.</p>
+        <br><p>Se recomienda usar el navegador chrome, sobre todo para crear videos ya que es el que tiene la mejor compatibilidad hasta el momento.</p>
+        <br><p>Al crear videos se guarda un archivo .webm que es necesario convertirlo a mp4. Eso puede hacerse fácilmente en cualquier conversor online, dejo algunas opciones:
+        <br><br><a href="https://cloudconvert.com/webm-to-mp4">Opción 1</a> 
+        <br><a href="https://video.online-convert.com/es/convertir/webm-a-mp4">Opción 2</a>
+        <br><a href="https://www.freeconvert.com/webm-to-mp4">Opción 3</a>
+        <br><a href="https://www.zamzar.com/es/convert/webm-to-mp4/">Opción 4</a>
+        </p>
+        <br><p>La grabación demora un rato en hacerse, no estresarse, pueden ver el proceso en la pestaña de “movimiento”.</p>
+        <br><p>El sitio está pensado para ser utilizado primordialmente en un navegador de computadora, pero estoy tratando de habilitar (al menos funciones principales) para mobile y tablets.</p>
+      </div>
+      <div id="contact">
+        <h3>
+          Sitio creado por: Santiago Perdomo
+        </h3>
+        <p><a href="https://www.instagram.com/santi.perdomo/" target="_blank">Instagram</a> | <a href="https://l.instagram.com/?u=http%3A%2F%2Fbehance.net%2Fsantiago36%2F%2F&e=ATPE13knSXR09eWwePBp_e8LI8655BzVepAoeNw6IIAIPAuDIMoZDffvx7BrfCgELHReZukxtxpmd23pTO-SvA&s=1" target="_blank">Behance</a></p>
+      </div>
+    </section>
+
+  </body>
+</html>

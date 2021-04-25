@@ -1,0 +1,438 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Helvetica';
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+canvas {
+  display: block;
+}
+
+
+
+h1{
+  font-size: 22pt;
+  color: black;
+  padding-bottom: 5px;
+}
+
+p{
+  font-size: 11pt;
+  padding-bottom: 5px;
+  padding-top: 0px;
+  line-height: 15pt;
+}
+
+.subtitulo{
+  font-weight: 800;
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  line-height: 15pt;
+  font-size: 11pt;
+}
+
+a:hover{
+  color: red;
+  cursor: pointer;
+}
+
+hr{
+  border-top: 1px solid black;
+}
+
+
+input[type="range"]{
+  -webkit-appearance: none;
+  width: 100%; height: 1px;
+  background: black;
+  outline: none;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  width: 15px; height: 15px;
+  background: black;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: red;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="color"] {
+  appearance: none;
+  width: 100%;
+	border: 1px solid black;
+	height: 32px;
+  outline: none;
+  box-sizing: border-box;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+input[type="color"]:hover{
+  opacity: 75%;
+  cursor: pointer;
+}
+
+
+#PosterGenerator{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 30px;
+  background-color:white;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+}
+#PosterGeneratorLogo{
+  width: 50%;
+  float: left;
+  padding-top: 15px;
+  padding-left: 25px;
+  /* position: absolute;
+  top: 15px;
+  left: 25px; */
+  line-height: 0pt;
+  color: black;
+  box-sizing: border-box;
+}
+#infoLink{
+  width: 50%;
+  height: 100%;
+  text-align: right;
+  float: left;
+  padding-top: 15px;
+  padding-right: 25px;
+  background-color: white;
+  line-height: 0pt;
+  color: red;
+  box-sizing: border-box;
+}
+#infoLink:hover{
+  color: white;
+  background-color: red;
+}
+
+#navbar{
+  position: fixed;
+  z-index: 50;
+  top: 30px;
+  height: 30px;
+  width: 50%;
+  background-color: black;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+}
+.navbarItem{
+  color: white;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 25px;
+  padding-right: 0px;
+  padding-top: 5px;
+}
+.navbarItem a{
+  color: white;
+}
+.navbarItem a:hover{
+  text-decoration: underline;
+}
+
+/* #menu{
+  position: relative;
+  float: left;
+  background-color: white;
+  width: 10%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 45px 10px 0px 10px;
+  display: none;
+}
+#menu a{
+  color: black;
+}
+#menu a:hover{
+  color: gray;
+} */
+
+
+ul{
+  list-style-type: none;
+}
+
+#toolBox{
+  float: left;
+  background-color: white;
+  width: 50%;
+  height: 100vh;
+  border-width: 2px;
+  box-sizing: border-box;
+  padding: 100px 25px 0px 25px;
+  overflow-y: scroll;
+  /* border-right: 1px solid black; */
+}
+
+.tool{
+  display: none;
+  background-color: white;
+  margin-top: 0px;
+  width: 100%;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+textarea{
+  outline: none;
+  font-size: 12pt;
+  width: 100%;
+  resize: none;
+  height: 75px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 7px;
+}
+
+.toolTitle{
+  display: inline-block;
+}
+.selectFontBtn{
+  float: right;
+}
+
+
+.typeSelector{
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  width: 400px;
+  border: 1px solid black;
+  left: 50%;
+  top: 60px;
+  box-sizing: border-box;
+  padding: 7px;
+  display: none;
+}
+
+#uploadBtn{
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  padding: 7px;
+  padding-bottom: 50px;
+  margin-bottom: 7px;
+  box-sizing: border-box;
+}
+#uploadBtn:hover{
+  background-color: red;
+  border-color: red;
+  color: white;
+  cursor: pointer;
+}
+#upload-photo{
+  position:absolute;
+    top: -1000px;
+}
+#deleteImage{
+  float: right;
+}
+
+#timeBox{
+  position: relative;
+  box-sizing: content-box;
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  height: 50px;
+}
+.quarter{
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  border-right: 0.5px solid black;
+  height: 100%;
+  text-align: right;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+#timeBar{
+  position: absolute;
+  box-sizing: content-box;
+  background-color: red;
+  /* width: 0%; */
+  height: inherit;
+}
+.timeBtn{
+  display: inline-block;
+  padding-top: 7px;
+}
+#stopBtn{
+  float: right;
+}
+
+#titular{
+  display: block;
+}
+#titularLink{
+  text-decoration: underline;
+}
+
+#viewRender{
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: white;
+  z-index: -6;
+  border-left: 1px solid black;
+}
+
+#canvasContainer{
+  position: absolute;
+  display: block;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+  /* width: 540px; */
+  /* height: 675px; */
+  border: 1px solid black;
+}
+
+#noCanvas{
+  display: none;
+}
+
+#renderScale{
+  position: absolute;
+  z-index: 15;
+  bottom: 0px;
+  background-color: white;
+  width: 100%;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2px;
+  margin: 0px;
+  box-sizing: border-box;
+  border-top: 1px solid black;
+}
+#canvasScale{
+  margin-top: 13px;
+  float: right;
+  width: 100%;
+}
+
+#rotateBtn{
+  position: absolute;
+  z-index: 50;
+  bottom: 36px;
+  right: 10px;
+}
+
+#downloadSection{
+  position: fixed;
+  bottom: 0px;
+  z-index: 15;
+  background-color: whitesmoke;
+  width: 50%;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.downloadSection{
+  float: left;
+  height: inherit;
+  box-sizing: border-box;
+}
+.downloadSection a{
+  color: white;
+}
+#AddName{
+  background-color: black;
+  width: 50%;
+  box-sizing: border-box;
+}
+#AddName textarea{
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+#downloadImage{
+  background-color: red;
+  width: 25%;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+#downloadVideo{
+  background-color: blue;
+  width: 25%;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+#info{
+  display: none;
+  z-index: 60;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  opacity: 95%;
+  padding: 0px 25px 0px 25px;
+  box-sizing: border-box;
+}
+
+#infoBar{
+  padding-top: 7px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+#about{
+  float: left;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#avisos{
+  float: right;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+#contact{
+  position: absolute;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  bottom: 0px;
+  left: 0px;
+}
