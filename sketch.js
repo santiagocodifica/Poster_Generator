@@ -265,7 +265,7 @@ function linkPressed(){
 
   //INFO BTN
   if(this.id() == 'infoLink'){
-    infoPage.style("display:block");
+    infoPage.style("display:none");
   } else if(this.id() == 'closeInfo'){
     infoPage.style('display: none');
   }
